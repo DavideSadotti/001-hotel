@@ -13,7 +13,7 @@ class Client extends Model
         return $this->hasMany('App\Reservation');
     }
 
-    public function informations(){
+    public function information(){
 
         return $this->belongsTo('App\Information');
     }

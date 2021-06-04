@@ -8,12 +8,12 @@ class Information extends Model
 {
     protected $guarded = [];
 
-    public function clients(){
+    public function client(){
 
         return $this->belongsTo('App\Client');
     }
 
-    public function guests(){
+    public function guest(){
 
         return $this->belongsTo('App\Guest');
     }

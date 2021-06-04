@@ -8,7 +8,7 @@ class Guest extends Model
 {
     protected $guarded = [];
 
-    public function informations(){
+    public function information(){
 
         return $this->belongsTo('App\Information');
     }

@@ -13,13 +13,13 @@ class CreateInformationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('informations', function (Blueprint $table) {
+        Schema::create('information', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')->constrained()->nullable();
-            $table->foreignId('guest_id')->constrained()->nullable();
+            $table->foreignId('client_id')->nullable()->constrained();
+            $table->foreignId('guest_id')->nullable()->constrained();
             $table->string('codice_fiscale')->unique();
             $table->date('born_year');
-            $table->char('genre', 1);
+            $table->char('genre', 1)->nullable();
             $table->boolean('disability')->default(0);
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateInformationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('informations');
+        Schema::dropIfExists('information');
     }
 }
